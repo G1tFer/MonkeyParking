@@ -71,6 +71,7 @@ export class StarterContentComponent implements OnInit {
         address:'',
         number: 88
       }
+    }
   ];
 
 
