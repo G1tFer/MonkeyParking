@@ -1,0 +1,53 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="row">
+      <div class="col-md-4">
+        <h2 class="title-page">
+            <i class="fa fa-user"></i> Clientes
+        </h2>
+      </div>
+      <div class="col-md-6">
+        <input type="search" class="input-search" placeholder="Pesquisar: Nome, cor, empresa..."><i class="fa fa-search i-icon-search"></i>
+      </div>
+    <div class="col-md-2">
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+        <li class="active">Here</li>
+      </ol>
+    </div>
+  </div>
+  </section>
+  
+  <!-- Main content -->
+  <section class="content">
+
+    <!-- Your Page Content Here -->
+    <div>
+      <table class="table table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">veículo</th>
+            <th scope="col">Vaga</th>
+            <th scope="col">Empresa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of dataClients; let ind = index">
+            <th scope="row">{{ind+1}}</th>
+            <td> {{item.client.name}} <i class="pull-right fa fa-ellipsis-h more-info"></i></td>
+            <td><i class="fa fa-motorcycle"></i> {{item.vehicle.type}}: {{item.vehicle.model}} <i class="pull-right fa fa-ellipsis-h more-info"></i></td>
+            <td> {{item.space.number}}</td>
+            <td> {{item.company.name}} - {{item.company.floor}} - sala: {{item.company.room}} <i class="pull-right fa fa-ellipsis-h more-info"></i></td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+
+  </section>
+  <!-- /.content -->
+</div>
