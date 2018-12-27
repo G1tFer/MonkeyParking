@@ -1,8 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
+/* Colors */
+.support{
+    color: #ff6c00;
+}
 
 .logo img{
-    width: 20%;
+    width: 14%;
     background-color: #fff;
     border-radius: 20px;
     margin-right: 8px;
@@ -69,7 +73,7 @@ thead.thead-light tr th:last-child {
 .modal.right .modal-dialog {
     position: fixed;
     margin: auto;
-    width: 320px;
+    /* width: 320px; */
     height: 100%;
     -webkit-transform: translate3d(0%, 0, 0);
         -ms-transform: translate3d(0%, 0, 0);
@@ -139,9 +143,10 @@ thead.thead-light tr th:last-child {
     bottom: 0px;
     width: 600px;
 }
-
+/* END MODAL SIDEBAR */
 
 
 .mb-1{
     margin-bottom: 1em;
 }
+
