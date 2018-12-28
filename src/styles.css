@@ -123,6 +123,7 @@ thead.thead-light tr th:last-child {
     border-radius: 0;
     border: none;
     width: 600px;
+    overflow-x: hidden;
 }
 
 .modal-header {
@@ -139,9 +140,10 @@ thead.thead-light tr th:last-child {
     color: #FFF;
 }
 .modal-footer{
-    position: fixed;
+    position: static;
     bottom: 0px;
     width: 600px;
+    padding: 15px 30px;
 }
 /* END MODAL SIDEBAR */
 
