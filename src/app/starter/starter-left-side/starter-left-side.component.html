@@ -31,11 +31,13 @@
     <ul class="sidebar-menu">
       <li class="header">SIDEBAR</li>
       <!-- Optionally, you can add icons to the links -->
-      <li><a href="#"><i class="fa fa-calculator"></i> <span>Dashboard</span></a></li>
-      <li class="active"><a href="#"><i class="fa fa-user"></i> <span>Clientes</span></a></li>
-      <li><a href="#"><i class="fa fa-car"></i> <span>Veículos</span></a></li>
-      <li><a href="#"><i class="fa fa-building"></i> <span>Empresa</span></a></li>
-      <li class="treeview">
+      <li><a routerLink="/dashboard"><i class="fa fa-calculator"></i> <span>Dashboard</span></a></li>
+      <li><a routerLink="/client"><i class="fa fa-user"></i> <span>Clientes</span></a></li>
+      <li><a routerLink="/vehicles"><i class="fa fa-car"></i> <span>Veículos</span></a></li>
+      <li><a routerLink="/companies"><i class="fa fa-building"></i> <span>Empresa</span></a></li>
+      <li><a routerLink="/vacancies"><i class="fa fa-clone"></i> <span>Vagas</span></a></li>
+
+      <!-- <li class="treeview">
         <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -45,7 +47,8 @@
           <li><a href="#">Link in level 2</a></li>
           <li><a href="#">Link in level 2</a></li>
         </ul>
-      </li>
+      </li> -->
+
     </ul>
     <!-- /.sidebar-menu -->
   </section>

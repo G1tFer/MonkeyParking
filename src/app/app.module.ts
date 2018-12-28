@@ -17,6 +17,11 @@ import { AdminContentComponent } from './admin/admin-content/admin-content.compo
 import { AdminFooterComponent } from './admin/admin-footer/admin-footer.component';
 import { AdminControlSidebarComponent } from './admin/admin-control-sidebar/admin-control-sidebar.component';
 import { AdminDashboard1Component } from './admin/admin-dashboard1/admin-dashboard1.component';
+import { ClientComponent } from './client/client.component';
+import { VehiclesComponent } from './vehicles/vehicles.component';
+import { CompaniesComponent } from './companies/companies.component';
+import { VacanciesComponent } from './vacancies/vacancies.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,12 @@ import { AdminDashboard1Component } from './admin/admin-dashboard1/admin-dashboa
     StarterLeftSideComponent,
     StarterContentComponent,
     StarterFooterComponent,
-    StarterControlSidebarComponent
+    StarterControlSidebarComponent,
+    ClientComponent,
+    VehiclesComponent,
+    CompaniesComponent,
+    VacanciesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
