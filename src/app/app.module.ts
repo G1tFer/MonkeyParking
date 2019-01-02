@@ -18,10 +18,13 @@ import { AdminFooterComponent } from './admin/admin-footer/admin-footer.componen
 import { AdminControlSidebarComponent } from './admin/admin-control-sidebar/admin-control-sidebar.component';
 import { AdminDashboard1Component } from './admin/admin-dashboard1/admin-dashboard1.component';
 import { ClientComponent } from './client/client.component';
-import { VehiclesComponent } from './vehicles/vehicles.component';
-import { CompaniesComponent } from './companies/companies.component';
-import { VacanciesComponent } from './vacancies/vacancies.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ClientService } from './client/client.service';
+import { CompanyComponent } from './company/company.component';
+import { VehicleComponent } from './vehicle/vehicle.component';
+import { VacancyComponent } from './vacancy/vacancy.component';
+import { CompanyService } from './company/company.service';
+import { VehicleService } from './vehicle/vehicle.service';
 
 @NgModule({
   declarations: [
@@ -33,17 +36,21 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     StarterFooterComponent,
     StarterControlSidebarComponent,
     ClientComponent,
-    VehiclesComponent,
-    CompaniesComponent,
-    VacanciesComponent,
-    DashboardComponent
+    DashboardComponent,
+    CompanyComponent,
+    VehicleComponent,
+    VacancyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AdminModule
   ],
-  providers: [],
+  providers: [
+    ClientService,
+    CompanyService,
+    VehicleService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

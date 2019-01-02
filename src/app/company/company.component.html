@@ -1,0 +1,53 @@
+<section class="content-header">
+  <div class="row">
+    <div class="col-md-4">
+      <h2 class="title-page">
+          <i class="fa fa-building"></i> Empresas
+      </h2>
+    </div>
+    <div class="col-md-6">
+      <input type="search" class="input-rounded" placeholder="Pesquisar: Nome, cor, empresa..."><i class="fa fa-search i-icon-search"></i>
+    </div>
+  <div class="col-md-2">
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+      <li class="active">Here</li>
+    </ol>
+  </div>
+</div>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+  <!-- Your Page Content Here -->
+  <div>
+    <table class="table table-hover">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Telefone</th>
+          <th scope="col">Andar</th>
+          <th scope="col">Sala</th>
+          <th scope="col">Endereço</th>
+          <th scope="col">Prédio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of dataCompany; let ind = index ">
+          <th scope="row">{{ind+1}}</th>
+          <td> {{item.name}} <i class="pull-right fa fa-ellipsis-h more-info" data-toggle="modal" data-target="#myModal"></i></td>
+          <td> {{item.fone}} </td>
+          <td> {{item.floor}} </td>
+          <td> {{item.room}} </td>
+          <td> {{item.address.street}}, {{item.address.number}}</td>
+          <td> {{item.building}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  {{dataCompany | json}}
+
+</section>

@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-4">
       <h2 class="title-page">
-          <i class="fa fa-user"></i> Clientes
+          <i class="fa fa-car"></i> Veículos
       </h2>
     </div>
     <div class="col-md-6">
@@ -26,23 +26,25 @@
       <thead class="thead-light">
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Nome</th>
-          <th scope="col">Veículo</th>
-          <th scope="col">Vaga</th>
-          <th scope="col">Empresa</th>
+          <th scope="col">Responsável</th>
+          <th scope="col">Tipo</th>
+          <th scope="col">Ano</th>
+          <th scope="col">Placa</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of dataClients; let ind = index">
+        <tr *ngFor="let item of dataVehicles; let ind = index">
           <th scope="row">{{ind+1}}</th>
           <td> {{item.client.name}} <i class="pull-right fa fa-ellipsis-h more-info" data-toggle="modal" data-target="#myModal"></i></td>
-          <td><i class="fa fa-motorcycle"></i> {{item.vehicle.type}}: {{item.vehicle.model}} <i class="pull-right fa fa-ellipsis-h more-info"></i></td>
-          <td> {{item.space.number}}</td>
-          <td> {{item.company.name}} - {{item.company.floor}} - sala: {{item.company.room}} <i class="pull-right fa fa-ellipsis-h more-info"></i></td>
+          <td><i class="fa fa-motorcycle"></i> {{item.vehicle.type}}: {{item.vehicle.mark}} / {{item.vehicle.model}} - {{item.vehicle.color}} <i class="pull-right fa fa-ellipsis-h more-info"></i></td>
+          <td> {{item.vehicle.year}}</td>
+          <td> {{item.vehicle.plate}}</td>
         </tr>
       </tbody>
     </table>
   </div>
+
+  {{dataVehicles | json}}
 
 </section>
 <!-- /.content -->

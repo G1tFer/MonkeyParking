@@ -7,10 +7,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ClientComponent } from './../client/client.component';
-import { VehiclesComponent } from './../vehicles/vehicles.component';
-import { CompaniesComponent } from '../companies/companies.component';
-import { VacanciesComponent } from '../vacancies/vacancies.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
+import { CompanyComponent } from './../company/company.component';
+import { VehicleComponent } from '../vehicle/vehicle.component';
+import { VacancyComponent } from '../vacancy/vacancy.component';
 
 @NgModule({
   imports: [
@@ -18,9 +18,9 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'client', component: ClientComponent },
-      { path: 'vehicles', component: VehiclesComponent },
-      { path: 'companies', component: CompaniesComponent },
-      { path: 'vacancies', component: VacanciesComponent }
+      { path: 'vehicle', component: VehicleComponent },
+      { path: 'company', component: CompanyComponent },
+      { path: 'vacancy', component: VacancyComponent }
     ])
   ],
   declarations: [],
