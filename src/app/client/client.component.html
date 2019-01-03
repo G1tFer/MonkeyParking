@@ -1,20 +1,27 @@
 <section class="content-header">
   <div class="row">
     <div class="col-md-4">
-      <h2 class="title-page">
+      <div class="col-md-6">
+        <h2 class="title-page">
           <i class="fa fa-user"></i> Clientes
-      </h2>
+        </h2>
+      </div>
+      <div class="col-md-6">
+        <div class="icon-add">
+          <i class="fa fa-plus" data-toggle="modal" data-target="#addClient"></i>
+        </div>
+      </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <input type="search" class="input-rounded" placeholder="Pesquisar: Nome, cor, empresa..."><i class="fa fa-search i-icon-search"></i>
     </div>
-  <div class="col-md-2">
-    <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-      <li class="active">Here</li>
-    </ol>
+    <div class="col-md-2">
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+        <li class="active">Here</li>
+      </ol>
+    </div>
   </div>
-</div>
 </section>
 
 <!-- Main content -->
@@ -27,6 +34,7 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Nome</th>
+          <th scope="col">Fone</th>
           <th scope="col">Veículo</th>
           <th scope="col">Vaga</th>
           <th scope="col">Empresa</th>
@@ -35,7 +43,8 @@
       <tbody>
         <tr *ngFor="let item of dataClients; let ind = index">
           <th scope="row">{{ind+1}}</th>
-          <td> {{item.client.name}} <i class="pull-right fa fa-ellipsis-h more-info" data-toggle="modal" data-target="#myModal"></i></td>
+          <td> {{item.client.name}} <i class="pull-right fa fa-ellipsis-h more-info" data-toggle="modal" data-target="#addClient"></i></td>
+          <td>{{item.client.fone}}</td>
           <td><i class="fa fa-motorcycle"></i> {{item.vehicle.type}}: {{item.vehicle.model}} <i class="pull-right fa fa-ellipsis-h more-info"></i></td>
           <td> {{item.space.number}}</td>
           <td> {{item.company.name}} - {{item.company.floor}} - sala: {{item.company.room}} <i class="pull-right fa fa-ellipsis-h more-info"></i></td>
@@ -48,7 +57,7 @@
 <!-- /.content -->
 
 <!-- Modal -->
-<div class="modal left fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal left fade" id="addClient" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
 
@@ -61,14 +70,14 @@
 
         <div class="mb-1">
           <div class="row">
-          <div class="col-md-6">
-            <label class="control-label">Nome</label>
-            <input name="Nome" placeholder="Nome" class="input-rounded" type="text">
-          </div>
-          <div class="col-md-6">
+            <div class="col-md-6">
+              <label class="control-label">Nome</label>
+              <input name="Nome" placeholder="Nome" class="input-rounded" type="text" [(ngModel)]="client.name">
+            </div>
+            <div class="col-md-6">
               <label class="control-label">Sobrenome</label>
-              <input name="Sobrenome" placeholder="Sobrenome" class="input-rounded" type="text">
-          </div>
+              <input name="Sobrenome" placeholder="Sobrenome" class="input-rounded" type="text" [(ngModel)]="client.last.name">
+            </div>
           </div>
         </div>
 
@@ -76,24 +85,24 @@
           <div class="row">
             <div class="col-md-6">
               <label class="control-label"><i class="fa fa-whatsapp"></i> Celular</label>
-              <input class="input-rounded" type="text">
+              <input class="input-rounded" type="text" [(ngModel)]="client.celFone">
             </div>
             <div class="col-md-6">
               <label class="control-label"><i class="fa fa-phone"></i>Telefone</label>
-              <input class="input-rounded" type="text">
+              <input class="input-rounded" type="text" [(ngModel)]="client.fone">
             </div>
           </div>
         </div>
-        
+
         <div class="mb-1">
           <div class="row">
             <div class="col-md-6">
               <label class="control-label">CPF</label>
-              <input class="input-rounded" type="text" maxlength="11">
+              <input class="input-rounded" type="text" maxlength="11" [(ngModel)]="client.CPF">
             </div>
             <div class="col-md-6">
               <label class="control-label">Nascimento</label>
-              <input class="input-rounded" type="date">
+              <input class="input-rounded" type="date" [(ngModel)]="client.birth">
             </div>
           </div>
         </div>
@@ -102,62 +111,58 @@
           <div class="row">
             <div class="col-md-6">
               <label class="control-label">RG</label>
-              <input class="input-rounded" type="text" maxlength="9">
+              <input class="input-rounded" type="text" maxlength="9" [(ngModel)]="client.RG">
             </div>
             <div class="col-md-6">
               <label class="control-label">Habilitação</label>
-              <input class="input-rounded" type="text">
+              <input class="input-rounded" type="text" [(ngModel)]="client.driverLicense">
             </div>
           </div>
         </div>
 
         <hr>
-        
+
         <div class="mb-1">
           <div class="row">
             <div class="col-md-12">
               <label class="control-label"><i class="fa fa-building"></i> Empresa</label> <i class="pull-right fa fa-plus-square"></i>
-              <select class="input-rounded">
-                <option value="">Empresa 1</option>
-                <option value="">Empresa 2</option>
-                <option value="">Empresa 3</option>
+              <select class="input-rounded" [(ngModel)]="company">
+                <option *ngFor="let company of companies" [value]="company.id">{{company.name}}</option>
               </select>
             </div>
           </div>
         </div>
 
         <hr>
-        
+
         <div class="mb-1">
           <div class="row">
             <div class="col-md-12 mb-1"> <label><i class="fa fa-car"></i> Velículo</label></div>
-            <div class="col-md-12 mb-1"> <label>Tipo</label> 
+            <div class="col-md-12 mb-1"> <label>Tipo</label>
               <select class="input-rounded">
-                <option>Carro</option>
-                <option>Moto</option>
-                <option>Pickup</option>
+                <option *ngFor="let type of typeVehicle" >{{type.label}}</option>
               </select>
             </div>
             <div class="col-md-6">
-              <label class="control-label">Marca</label> 
-              <input class="input-rounded" type="text">
+              <label class="control-label">Marca</label>
+              <input class="input-rounded" type="text" [(ngModel)]="vehicle.mark">
             </div>
             <div class="col-md-6">
-                <label class="control-label">Modelo</label> 
-                <input class="input-rounded" type="text">
-              </div>
+              <label class="control-label">Modelo</label>
+              <input class="input-rounded" type="text" [(ngModel)]="vehicle.model">
+            </div>
           </div>
         </div>
         <div class="mb-1">
           <div class="row">
             <div class="col-md-6">
-              <label class="control-label">Placa</label> 
-              <input class="input-rounded" type="text">
+              <label class="control-label">Placa</label>
+              <input class="input-rounded" type="text" [(ngModel)]="vehicle.plate">
             </div>
             <div class="col-md-6">
-                <label class="control-label">Renavan</label> 
-                <input class="input-rounded" type="text">
-              </div>
+              <label class="control-label">Ano</label>
+              <input class="input-rounded" type="text" [(ngModel)]="vehicle.year">
+            </div>
           </div>
         </div>
 
@@ -167,7 +172,7 @@
       <div class="modal-footer">
         <div>
           <button class="btn btn-default" data-dismiss="modal" aria-label="Close">Cancelar</button>
-          <button class="btn btn-success">Salvar</button>
+          <button class="btn btn-success" (click)="add(client)">Salvar</button>
         </div>
       </div><!-- modal-footer -->
 

@@ -19,6 +19,7 @@ export class ClientService {
       {
         client: { 
           name: 'Fernando Augusto de Souza',
+          fone: '(16) 9 8236-6787'
         },
         vehicle: this.vehicle[0],
         company: this.company[0],
@@ -26,11 +27,11 @@ export class ClientService {
           address:'',
           number: 100
         }
-  
       },
       {
         client: { 
           name: 'Pablo Garcia',
+          fone: '(16) 9 8888-9999'
         },
         vehicle: this.vehicle[1],
         company: this.company[0],
@@ -42,6 +43,7 @@ export class ClientService {
       {
         client: { 
           name: 'Felipe Armentano',
+          fone: '(19) 9 8999-8888'
         },
         vehicle: this.vehicle[2],
         company: this.company[0],

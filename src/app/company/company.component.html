@@ -1,20 +1,27 @@
 <section class="content-header">
   <div class="row">
     <div class="col-md-4">
-      <h2 class="title-page">
-          <i class="fa fa-building"></i> Empresas
-      </h2>
+      <div class="col-md-6">
+        <h2 class="title-page">
+          <i class="fa fa-user"></i> Empresas
+        </h2>
+      </div>
+      <div class="col-md-6">
+        <div class="icon-add">
+          <i class="fa fa-plus" data-toggle="modal" data-target="#addCompany"></i>
+        </div>
+      </div>
     </div>
     <div class="col-md-6">
       <input type="search" class="input-rounded" placeholder="Pesquisar: Nome, cor, empresa..."><i class="fa fa-search i-icon-search"></i>
     </div>
-  <div class="col-md-2">
-    <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-      <li class="active">Here</li>
-    </ol>
+    <div class="col-md-2">
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+        <li class="active">Here</li>
+      </ol>
+    </div>
   </div>
-</div>
 </section>
 
 <!-- Main content -->
@@ -51,3 +58,111 @@
   {{dataCompany | json}}
 
 </section>
+
+<!-- Modal -->
+<div class="modal left fade" id="addCompany" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Left Sidebar</h4>
+      </div>
+
+      <div class="modal-body">
+
+        <div class="mb-1">
+          <div class="row">
+            <div class="col-md-12">
+              <label class="control-label">Empresa</label>
+              <input name="Nome" placeholder="Empresa" class="input-rounded" type="text" [(ngModel)]="company.name">
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-1">
+          <div class="row">
+            <div class="col-md-6">
+              <label class="control-label"><i class="fa fa-phone"></i> Telefone 1</label>
+              <input class="input-rounded" type="text" [(ngModel)]="company.fone">
+            </div>
+            <div class="col-md-6">
+              <label class="control-label"><i class="fa fa-phone"></i> Telefone 2</label>
+              <input class="input-rounded" type="text" disabled>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-1">
+          <div class="row">
+            <div class="col-md-12">
+              <label class="control-label">Endereço</label>
+              <input class="input-rounded" type="text" maxlength="11" [(ngModel)]="company.address.street">
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-1">
+          <div class="row">
+            <div class="col-md-6">
+              <label class="control-label">Bairro</label>
+              <input class="input-rounded" type="text" [(ngModel)]="company.address.district">
+            </div>
+            <div class="col-md-6">
+              <label class="control-label">CEP</label>
+              <input class="input-rounded" type="text" [(ngModel)]="company.address.CEP">
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="mb-1">
+          <div class="row">
+            <div class="col-md-12 mb-1"> <label><i class="fa fa-building"></i> Prédio</label></div>
+            <div class="col-md-12">
+              <label class="control-label">Nome</label>
+              <input class="input-rounded" type="text" [(ngModel)]="company.building">
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-1">
+          <div class="row">
+            <div class="col-md-6">
+              <label class="control-label">Andar</label>
+              <input class="input-rounded" type="text" [(ngModel)]="company.floor">
+            </div>
+            <div class="col-md-6">
+              <label class="control-label">Sala</label>
+              <input class="input-rounded" type="text" [(ngModel)]="company.room">
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-1">
+          <div class="row">
+            <div class="col-md-12">
+              <label class="control-label">Anotação</label>
+              <div class="note-textarea">
+                <textarea rows="5" [(ngModel)]="company.note"></textarea>
+                <button class="pull-right btn btn-xs btn-default" (click)="clearNote()">Limpar</button>
+              </div>
+              {{company | json}}
+            </div>
+          </div>
+        </div>
+
+
+      </div><!-- modal-body -->
+
+      <div class="modal-footer">
+        <div>
+          <button class="btn btn-default" data-dismiss="modal" aria-label="Close">Cancelar</button>
+          <button class="btn btn-success" (click)="add(company)">Salvar</button>
+        </div>
+      </div><!-- modal-footer -->
+
+    </div><!-- modal-content -->
+  </div><!-- modal-dialog -->
+</div><!-- modal -->

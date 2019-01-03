@@ -10,11 +10,54 @@ import { CompanyService } from './company.service';
 export class CompanyComponent implements OnInit {
 
   dataCompany = [];
+  company = {
+    id: '',
+    name: '',
+    fone: '',
+    address: {
+      street:'',
+      district:'',
+      number: '',
+      CEP: ''
+    },
+    building: '',
+    floor: '',
+    room: '',
+    note: ''
+  };
 
-  constructor(private conpanyService: CompanyService) { }
+  constructor(private companyService: CompanyService) { }
 
   ngOnInit() {
-    this.dataCompany = this.conpanyService.getAllCompanies();
+    this.dataCompany = this.companyService.getAllCompanies();
+  }
+
+  clearNote(){
+    this.company.note = '';
+  }
+
+  resetCompany(){
+    this.company = {
+      id: '',
+      name: '',
+      fone: '',
+      address: {
+        street:'',
+        district:'',
+        number: '',
+        CEP: ''
+      },
+      building: '',
+      floor: '',
+      room: '',
+      note: ''
+    };
+  
+  }
+
+  add(addCompany){
+    this.dataCompany.push(addCompany);
+    this.resetCompany();
   }
 
 }

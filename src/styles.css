@@ -4,9 +4,13 @@
 .support{
     color: #ff6c00;
 }
-
-.logo img{
-    width: 14%;
+.logo .logo-mini img{
+    width: 70%;
+    background-color: #fff;
+    border-radius: 20px;
+}
+.logo .logo-lg img{
+    width: 18%;
     background-color: #fff;
     border-radius: 20px;
     margin-right: 8px;
@@ -36,21 +40,7 @@
     padding: 17px 15px;
     cursor: pointer;
 }
-.sidebar-menu .menu-icon-plus{
-    color: #2d3a40;
-    font-size: 10px;
-}
-.sidebar-menu .menu-icon-plus:hover{
-    background: #1e282c;
-    color: #fff;
-}
-.sidebar-menu > li {
-    display: flex;
-}
-.sidebar-menu > li > a {
-    display: block;
-    width: 100%;
-}
+
 
 .input-rounded::placeholder{
     color: #cccc
@@ -174,8 +164,26 @@ thead.thead-light tr th:last-child {
 }
 /* END MODAL SIDEBAR */
 
-
+.icon-add{
+    padding: 5px 4px;
+}
+.icon-add i{
+    cursor: pointer;
+    padding: 4px 6px;
+    border-radius: 20px;
+}
+.icon-add i:hover {
+    background-color: #3c8dbc;
+    color: #fff;
+    transition: 0.8s;
+}
 .mb-1{
     margin-bottom: 1em;
+}
+
+.note-textarea textarea {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 4px;
 }
 

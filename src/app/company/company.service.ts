@@ -5,6 +5,7 @@ export class CompanyService {
 
   company = [
     {
+      id: 1,
       name: 'Scan Brazil Consulting',
       fone: '3333-3333',
       address: {
@@ -19,6 +20,7 @@ export class CompanyService {
       note: '--Descrição--'
     },
     {
+      id: 2,
       name: 'Café América',
       fone: '3232-3232',
       address: {
@@ -33,6 +35,7 @@ export class CompanyService {
       note: '--Descrição--'
     },
     {
+      id: 3,
       name: 'LL Gestão de Bens e Serviços',
       fone: '3434-3434',
       address: {
