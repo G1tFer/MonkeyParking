@@ -3,13 +3,13 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class CompanyService {
 
-  company = [
+  companies = [
     {
       id: 1,
       name: 'Scan Brazil Consulting',
       fone: '3333-3333',
       address: {
-        street:'Rua Padro Duarto',
+        street:'Rua Padre Duarte',
         district:'Jardim Nova América',
         number: 151,
         CEP: '14800-360'
@@ -24,7 +24,7 @@ export class CompanyService {
       name: 'Café América',
       fone: '3232-3232',
       address: {
-        street:'Rua Padro Duarto',
+        street:'Rua Padre Duarte',
         district:'Jardim Nova América',
         number: 151,
         CEP: '14800-360'
@@ -39,7 +39,7 @@ export class CompanyService {
       name: 'LL Gestão de Bens e Serviços',
       fone: '3434-3434',
       address: {
-        street:'Rua Padro Duarto',
+        street:'Rua Padre Duarte',
         district:'Jardim Nova América',
         number: 151,
         CEP: '14800-360'
@@ -54,7 +54,7 @@ export class CompanyService {
   constructor() { }
 
   getAllCompanies(){
-    return this.company;
+    return this.companies;
   }
 
 }

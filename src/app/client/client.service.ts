@@ -17,37 +17,37 @@ export class ClientService {
   getAllClients(){
     return [
       {
-        client: { 
-          name: 'Fernando Augusto de Souza',
-          fone: '(16) 9 8236-6787'
-        },
+        name: 'Fernando Augusto de',
+        lastName:'Souza',
+        celFone: '(16) 9 8236-6787',
+        fone: '',
         vehicle: this.vehicle[0],
         company: this.company[0],
-        space: {
+        vacancy: {
           address:'',
           number: 100
         }
       },
       {
-        client: { 
-          name: 'Pablo Garcia',
-          fone: '(16) 9 8888-9999'
-        },
+        name: 'Pablo',
+        lastName: 'Garcia',
+        celFone: '(16) 9 8888-9999',
+        fone: '',
         vehicle: this.vehicle[1],
         company: this.company[0],
-        space: {
+        vacancy: {
           address:'',
           number: 99
         },
       },
       {
-        client: { 
-          name: 'Felipe Armentano',
-          fone: '(19) 9 8999-8888'
-        },
+        name: 'Felipe',
+        lastName: 'Armentano',
+        celFone: '(19) 9 8999-8888',
+        fone: '',
         vehicle: this.vehicle[2],
         company: this.company[0],
-        space: {
+        vacancy: {
           address:'',
           number: 88
         }

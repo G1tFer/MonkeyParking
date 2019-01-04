@@ -34,7 +34,7 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Nome</th>
-          <th scope="col">Fone</th>
+          <th scope="col" colspan="2">Fone</th>
           <th scope="col">Veículo</th>
           <th scope="col">Vaga</th>
           <th scope="col">Empresa</th>
@@ -43,10 +43,11 @@
       <tbody>
         <tr *ngFor="let item of dataClients; let ind = index">
           <th scope="row">{{ind+1}}</th>
-          <td> {{item.client.name}} <i class="pull-right fa fa-ellipsis-h more-info" data-toggle="modal" data-target="#addClient"></i></td>
-          <td>{{item.client.fone}}</td>
+          <td> {{item.name}} {{item.lastName}} <i class="pull-right fa fa-ellipsis-h more-info" data-toggle="modal" data-target="#addClient"></i></td>
+          <td>{{item.celFone}}</td>
+          <td>{{item.fone}}</td>
           <td><i class="fa fa-motorcycle"></i> {{item.vehicle.type}}: {{item.vehicle.model}} <i class="pull-right fa fa-ellipsis-h more-info"></i></td>
-          <td> {{item.space.number}}</td>
+          <td> {{item.vacancy.number}}</td>
           <td> {{item.company.name}} - {{item.company.floor}} - sala: {{item.company.room}} <i class="pull-right fa fa-ellipsis-h more-info"></i></td>
         </tr>
       </tbody>
@@ -67,7 +68,7 @@
       </div>
 
       <div class="modal-body">
-
+        
         <div class="mb-1">
           <div class="row">
             <div class="col-md-6">
@@ -76,7 +77,7 @@
             </div>
             <div class="col-md-6">
               <label class="control-label">Sobrenome</label>
-              <input name="Sobrenome" placeholder="Sobrenome" class="input-rounded" type="text" [(ngModel)]="client.last.name">
+              <input name="Sobrenome" placeholder="Sobrenome" class="input-rounded" type="text" [(ngModel)]="client.lastName">
             </div>
           </div>
         </div>
@@ -126,8 +127,9 @@
           <div class="row">
             <div class="col-md-12">
               <label class="control-label"><i class="fa fa-building"></i> Empresa</label> <i class="pull-right fa fa-plus-square"></i>
-              <select class="input-rounded" [(ngModel)]="company">
-                <option *ngFor="let company of companies" [value]="company.id">{{company.name}}</option>
+              <select class="input-rounded" [(ngModel)]="client.company">
+                <option value="" disabled>Selecione</option>
+                <option *ngFor="let selectedCompany of companies" [value]="selectedCompany.id">{{selectedCompany.name}}</option>
               </select>
             </div>
           </div>
@@ -139,17 +141,18 @@
           <div class="row">
             <div class="col-md-12 mb-1"> <label><i class="fa fa-car"></i> Velículo</label></div>
             <div class="col-md-12 mb-1"> <label>Tipo</label>
-              <select class="input-rounded">
+              <select class="input-rounded" [(ngModel)]="vehicle.type">
+                <option value="" disabled>Selecione</option>
                 <option *ngFor="let type of typeVehicle" >{{type.label}}</option>
               </select>
             </div>
             <div class="col-md-6">
               <label class="control-label">Marca</label>
-              <input class="input-rounded" type="text" [(ngModel)]="vehicle.mark">
+              <input class="input-rounded" type="text" [(ngModel)]="client.vehicle.mark">
             </div>
             <div class="col-md-6">
               <label class="control-label">Modelo</label>
-              <input class="input-rounded" type="text" [(ngModel)]="vehicle.model">
+              <input class="input-rounded" type="text" [(ngModel)]="client.vehicle.model">
             </div>
           </div>
         </div>
@@ -157,15 +160,16 @@
           <div class="row">
             <div class="col-md-6">
               <label class="control-label">Placa</label>
-              <input class="input-rounded" type="text" [(ngModel)]="vehicle.plate">
+              <input class="input-rounded" type="text" [(ngModel)]="client.vehicle.plate">
             </div>
             <div class="col-md-6">
               <label class="control-label">Ano</label>
-              <input class="input-rounded" type="text" [(ngModel)]="vehicle.year">
+              <input class="input-rounded" type="text" [(ngModel)]="client.vehicle.year" >
             </div>
           </div>
         </div>
 
+        {{client | json}}
 
       </div><!-- modal-body -->
 
