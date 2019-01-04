@@ -82,7 +82,10 @@ export class ClientComponent implements OnInit {
   constructor(
     private clientService: ClientService,
     private companyService: CompanyService,
-    private formBuilder: FormBuilder) { }
+    private formBuilder: FormBuilder) 
+  {
+
+  }
 
   ngOnInit() {
     this.dataClients = this.clientService.getAllClients();
@@ -111,7 +114,10 @@ export class ClientComponent implements OnInit {
         color: [null],
       }
     });
+  }
 
+  load(){
+    alert("Implementar Reload");
   }
 
   add(newClient){

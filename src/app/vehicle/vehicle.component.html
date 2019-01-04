@@ -35,7 +35,7 @@
       <tbody>
         <tr *ngFor="let item of dataVehicles; let ind = index">
           <th scope="row">{{ind+1}}</th>
-          <td> {{item.client.name}} <i class="pull-right fa fa-ellipsis-h more-info" data-toggle="modal" data-target="#myModal"></i></td>
+          <td> {{item.name}} <i class="pull-right fa fa-ellipsis-h more-info" data-toggle="modal" data-target="#myModal"></i></td>
           <td><i class="fa fa-motorcycle"></i> {{item.vehicle.type}}: {{item.vehicle.mark}} / {{item.vehicle.model}} - {{item.vehicle.color}} <i class="pull-right fa fa-ellipsis-h more-info"></i></td>
           <td> {{item.vehicle.year}}</td>
           <td> {{item.vehicle.plate}}</td>
