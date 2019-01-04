@@ -32,6 +32,10 @@ export class CompanyComponent implements OnInit {
     this.dataCompany = this.companyService.getAllCompanies();
   }
 
+  load(){
+    alert("Implementar Reload");
+  }
+
   clearNote(){
     this.company.note = '';
   }

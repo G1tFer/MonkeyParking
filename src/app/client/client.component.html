@@ -13,7 +13,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
       <input type="search" class="input-rounded" placeholder="Pesquisar: Nome, cor, empresa..."><i class="fa fa-search i-icon-search"></i>
     </div>
     <div class="col-md-2">
@@ -44,7 +44,12 @@
       <tbody>
         <tr *ngFor="let item of dataClients; let ind = index">
           <th scope="row">{{ind+1}}</th>
-          <td> {{item.name}} {{item.lastName}} <i class="pull-right fa fa-ellipsis-h more-info" data-toggle="modal" data-target="#addClient"></i></td>
+          <td> {{item.name}} {{item.lastName}}  
+            <span class="pull-right">
+              <i class="fa fa-flag" style="color:red"></i> 
+              <i class="fa fa-ellipsis-h more-info" data-toggle="modal" data-target="#addClient"></i>
+            </span>
+          </td>
           <td>{{item.celFone}}</td>
           <td>{{item.fone}}</td>
           <td><i class="fa fa-motorcycle"></i> {{item.vehicle.type}}: {{item.vehicle.model}} <i class="pull-right fa fa-ellipsis-h more-info"></i></td>
